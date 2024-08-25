@@ -55,7 +55,7 @@ body {
   justify-content: center;
 }
 .temas .col {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   padding: 1rem;
   margin: 0.75rem;
   border-radius: 20px;
@@ -72,6 +72,21 @@ body {
 
 #btn-respuesta {
   border: none;
+  border-radius: 20px;
   color: white;
   background-color: var(--morado);
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin-top: 25px; /* Espacio arriba del botón */
+}
+
+#preguntas {
+  font-size: 40px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+/* Agrega un estilo para la opción seleccionada */
+.selected {
+  background-color: var(--morado); /* Color de fondo para la opción seleccionada */
+  color: white; /* Color del texto para la opción seleccionada */
+  border: 2px solid white; /* Borde blanco para resaltar la opción seleccionada */
+  font-weight: bold; /* Texto en negrita */
 }

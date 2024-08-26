@@ -143,7 +143,7 @@ function selectAnswer(selectedIndex) {
 function submitAnswer() {
   const selectedIndex = submitBtn.dataset.selectedIndex;
   
-  if (selectedIndex === undefined){
+  if (selectedIndex === undefined || selectedIndex === null || isNaN(selectedIndex)) {
     Swal.fire({
       title: 'Selección Requerida',
       text: 'Por favor, selecciona una respuesta antes de continuar.',
@@ -154,7 +154,9 @@ function submitAnswer() {
   }
 
   const correctIndex = quizData[currentQuestion].correct;
+  const selectedOption = options[selectedIndex];
 
+if (selectedOption){
   // Animaciones para la respuesta seleccionada
   if (parseInt(selectedIndex) === correctIndex) {
     score++;
@@ -162,6 +164,8 @@ function submitAnswer() {
   } else {
     options[selectedIndex].classList.add('animate__animated', 'animate__shakeX', 'incorrecta');
   }
+  
+    progressBar();
  
   setTimeout(() => {
     currentQuestion++;
@@ -177,14 +181,93 @@ function submitAnswer() {
     }
   }, 2000); // Esperar 2 segundos para la animación
 }
+else{
+  Swal.fire({
+    title: 'Error',
+    text: "Hubo un error al procesar la solicitud",
+    icon: 'error',
+    confirmButtonText: 'Aceptar'
+  })
+}
+}
+
+//funcion para crear la barra de progreso
+function progressBar(){
+  let bar = document.getElementById('barra');
+  let currentWidth = parseInt(bar.style.width.replace('%','')) ||0 ;
+
+    currentWidth += 10;
+
+  if(currentWidth >= 100){
+    currentWidth = 100;
+    bar.classList.add('barra-final');
+  }
+
+  bar.style.width = currentWidth + '%';
+}
+
 
 // Función para mostrar el resultado final
 function showResult() {
   resultEl.innerHTML = `
-    <h2>Resumen de resultados</h2>
-    <p>Has obtenido ${score} de ${quizData.length} respuestas correctas.</p>
-    <p>¡Gracias por participar!</p>
-  `;
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../css/style.css" />
+  </head>
+  <body>
+    <section class="container row center">
+      <nav class="nav-bar p-5">
+        <i class="fa-solid fa-sun"></i>
+        <i class="fa-solid fa-toggle-on"></i>
+        <i class="fa-regular fa-moon"></i>
+      </nav>
+      <!-- columna izquierda -->
+      <div class="col-lg-6 media-title">
+        <p class="titulo">
+          Quiz Completed
+          <span><br />You scored...</span>
+        </p>
+      </div>
+      <!-- Columna -->
+      <div class="col temas">
+          <div class="col-11 col text-center align-items-center h-auto" >
+            <div class="score" style="font-size: 9rem;" id="preguntas">${score}</div>
+            <p class="titulo-sub">out of ${quizData.length}</p>
+          </div>
+          <button class="col-11  btn btn-primary" id="btn-respuesta"><a href="../../../index.html">Jugar de nuevo</a></button>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/7b866cf1b9.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>`;
 }
 
 // Agregar eventos a las opciones y al botón

@@ -231,7 +231,7 @@ function showResult() {
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/Frontend_Quiz_app/css/style.css"/>
+    <link rel="stylesheet" href="../../../css/style.css"/>
   </head>
   <body>
     <section class="container row center">
@@ -247,13 +247,13 @@ function showResult() {
               <span><br />Has completado el cuestionario con: </span>
             </p>
           </div>
-          <div class="col temas">
+          <div class="col temas text-center">
               <div class="col-11 col text-center align-items-center h-auto" >
-                <div class="score" style="font-size: 9rem;" id="preguntas">${puntaje}</div>
+                <div class="score" style="font-size: 9rem;" id="preguntas">${score}</div>
                 <p class="titulo-sub">respuestas buenas de ${quizData.length}.</p>
               </div>
               <button class="col col" id="btn-respuesta" onclick="location.reload()">Jugar de nuevo</button>
-              <button class="col col" id="btn-respuesta" onclick="volverAlInicio()">Volver al inicio</button>
+               <a href="../../../index.html"><button class="col col" id="btn-respuesta"> Volver al inicio</button> </a> 
             </div>
           </div>
         </section>

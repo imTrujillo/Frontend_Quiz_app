@@ -1,103 +1,103 @@
 const quizData = [
   {
-    question: "¿Qué propiedad de CSS3 se utiliza para aplicar una sombra a un texto?",
+    question: "¿Cuál es la estructura correcta de un documento HTML5?",
     options: [
-      "text-shadow",
-      "box-shadow",
-      "shadow-text",
-      "font-shadow"
-    ],
-    correct: 0,
-  },
-  {
-    question: "¿Qué propiedad de CSS3 permite controlar la opacidad de un elemento?",
-    options: [
-      "opacity",
-      "visibility",
-      "filter",
-      "alpha",
-    ],
-    correct: 0,
-  },
-  {
-    question: "¿Qué propiedad de CSS3 se utiliza para crear esquinas redondeadas en un elemento?",
-    options: [
-      "border-radius",
-      "border-style",
-      "border-curve",
-      "corner-radius",
-    ],
-    correct: 0,
-  },
-  {
-    question: "¿Cuál de las siguientes es una unidad de medida relativa en CSS3?",
-    options: [
-      "px",
-      "em",
-      "cm",
-      "mm",
+      "<html><body><head></head></body></html>",
+      "<html><head></head><body></body></html>",
+      "<html><title></title><body></body></html>",
+      "<html><meta></meta><body></body></html>"
     ],
     correct: 1,
   },
   {
-    question: "¿Qué propiedad CSS3 se utiliza para aplicar una transición en una animación?",
+    question: "¿Qué etiqueta HTML5 se usa para reproducir un archivo de audio en una página web?",
     options: [
-      "animation",
-      "transition",
-      "transform",
-      "keyframes",
+      "<media>",
+      "<audio>",
+      "<sound>",
+      "<voice>",
     ],
     correct: 1,
   },
   {
-    question: "¿Qué propiedad CSS3 se utiliza para aplicar múltiples imágenes de fondo en un elemento?",
+    question: "¿Qué etiqueta en HTML5 define el contenido principal de un documento?",
     options: [
-      "background-image",
-      "background-multi",
-      "background-set",
-      "background-layer",
+      "<main>",
+      "<section>",
+      "<article>",
+      "<div>",
     ],
     correct: 0,
   },
   {
-    question: "¿Qué propiedad CSS3 se utiliza para transformar un elemento en 3D?",
+    question: "¿Qué atributo HTML5 se utiliza para especificar texto alternativo para una imagen?",
     options: [
-      "transform",
-      "perspective",
-      "rotate",
-      "translate",
+      "<alt>",
+      "<title>",
+      "<description>",
+      "<text>",
     ],
     correct: 0,
   },
   {
-    question: "¿Qué propiedad CSS3 permite distribuir el espacio sobrante entre elementos flexibles en un contenedor?",
+    question: "¿Qué etiqueta en HTML5 se utiliza para agrupar enlaces de navegación?",
     options: [
-      "flex",
-      "align-content",
-      "justify-content",
-      "space-around",
+      "<menu>",
+      "<nav>",
+      "<ul>",
+      "<link>",
+    ],
+    correct: 1,
+  },
+  {
+    question: "¿Cuál es la etiqueta HTML5 correcta para incrustar un vídeo en una página web?",
+    options: [
+      "<media>",
+      "<video>",
+      "<embed>",
+      "<object>",
+    ],
+    correct: 1,
+  },
+  {
+    question: "¿Cuál es la etiqueta adecuada en HTML5 para definir una sección que contiene contenido tangencial al contenido principal de la página?",
+    options: [
+      "<section>",
+      "<aside>",
+      "<article>",
+      "<footer>",
+    ],
+    correct: 1,
+  },
+  {
+    question: "¿Qué etiqueta HTML5 se utiliza para definir un área de contenido visible que puede ser ocultada o mostrada por el usuario?",
+    options: [
+      "<details>",
+      "<dialog>",
+      "<summary>",
+      "<aside>",
+    ],
+    correct: 0,
+  },
+  {
+    question: "¿Qué etiqueta HTML5 define un texto destacado, importante o con un énfasis especial?",
+    options: [
+      "<b>",
+      "<em>",
+      "<strong>",
+      "<i>",
     ],
     correct: 2,
   },
   {
-    question: "¿Cuál de las siguientes es una función en CSS3 utilizada para aplicar transformaciones de escala, rotación o traslación?",
+    question: "¿Cuál es el atributo correcto en HTML5 para hacer que un campo de entrada sea obligatorio en un formulario?",
     options: [
-      "scale",
-      "skew",
-      "rotate",
-      "transform",
+      "required",
+      "mandatory",
+      "obligatory",
+      "compulsory",
     ],
-    correct: 3,
-  },
-  {
-    question: "¿Qué propiedad CSS3 define la repetición de una animación?",
-    options: [
-      "animation-duration",
-      "animation-repeat",
-      "animation-iteration-count",
-      "animation-cycle",
-    ],
-    correct: 2,
+    correct: 0,
   },
 ];
 
@@ -211,7 +211,7 @@ function progressBar(){
 function showResult() {
   resultEl.innerHTML = `
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -269,6 +269,7 @@ function showResult() {
     ></script>
   </body>
 </html>
+
 `;
 }
 
